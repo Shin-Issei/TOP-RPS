@@ -16,7 +16,6 @@ function getCPUChoice(){
 
 function chooseRoundWinner(player, computer){
     if (player === computer){
-        console.log("Its A tie!")
         plrWins++;
         cmpWins++;
         return;
@@ -26,23 +25,17 @@ function chooseRoundWinner(player, computer){
         cmpWins++;
         return;
     }
-    // else if(computer == "S" && player == "P"){
-    //     cmpWins++;
-    // }
-    // else if (computer == "R" && player == "S"){
-    //     cmpWins++;
-    // }
     else{
         plrWins++;
     }
+    
 
 }
 
 function decideTheGame(){
-    let i = 0;
-    while (i < 5){
+    
     chooseRoundWinner(getPlayerChoice(), getCPUChoice());
-    console.log(`Player wins are ${plrWins} Computer wins are ${cmpWins}` );
+    console.log(`Player wins are ${plrWins} Computer wins are ${cmpWins}` )
     i++;
     }
     if (plrWins > cmpWins){
@@ -51,6 +44,9 @@ function decideTheGame(){
     else{
         console.log("The CPU Won!");
     }
-}
 
+let i = 0;
+while (i < 5){
 decideTheGame();
+i++
+}
