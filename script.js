@@ -35,18 +35,18 @@ function chooseRoundWinner(player, computer){
 function decideTheGame(){
     
     chooseRoundWinner(getPlayerChoice(), getCPUChoice());
-    console.log(`Player wins are ${plrWins} Computer wins are ${cmpWins}` )
-    i++;
+    console.log(`Player wins are ${plrWins} Computer wins are ${cmpWins}` );
+    
+    }
+
+let i = 0;
+while (i < 5){
+decideTheGame();
+i++;
     }
     if (plrWins > cmpWins){
         console.log("You win!!!");
     }
     else{
         console.log("The CPU Won!");
-    }
-
-let i = 0;
-while (i < 5){
-decideTheGame();
-i++
 }
