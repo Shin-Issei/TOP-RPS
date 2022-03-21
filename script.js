@@ -1,6 +1,10 @@
 let plrWins = 0;
 let cmpWins = 0;
 
+function out(x){
+    return console.log(x);
+}
+
 function getPlayerChoice(){
     let Choice = "RPS"
     let plrChoice = Choice[Number(prompt("Choose 0 for rock 1 for paper and 2 for scissors."))];
