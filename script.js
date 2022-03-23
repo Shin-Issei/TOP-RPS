@@ -1,20 +1,34 @@
+const plrChoiceRock = document.getElementById("rock");
+const plrChoicePaper = document.getElementById("paper");
+const plrChoiceScissors = document.getElementById("scissors");
+const div = document.getElementById("playerChoiceReturn");
+
+let ButtonSelect = 5;
 let plrWins = 0;
 let cmpWins = 0;
 
-
-
-function getPlayerChoice(){
-    let Choice = "RPS"
-    let plrChoice = Choice[Number(prompt("Choose 0 for rock 1 for paper and 2 for scissors."))];
-    return plrChoice;
+function getPlayerChoice(x){
+    let Choice = "RPS";
+    div.textContent = Choice[x];
+    return Choice[x]
 }
+
+plrChoiceRock.addEventListener("click", function (){chooseRoundWinner(getPlayerChoice(0), getCPUChoice())})
+plrChoicePaper.addEventListener("click", function () {chooseRoundWinner(getPlayerChoice(1),getCPUChoice() )});
+plrChoiceScissors.addEventListener("click",function () {chooseRoundWinner(getPlayerChoice(2), getCPUChoice())});
+
+
 
 function getCPUChoice(){
     let ComputerChoice = "RPS"
-    return ComputerChoice[Math.floor(Math.random()* 3)]; 
+    return ComputerChoice[Math.floor(Math.random()* 3)] 
 }
 
+//Change the source of player parameter when I choose round winner.
 function chooseRoundWinner(player, computer){
+    console.log(player);
+    console.log(computer);
+    
     if (player === computer){
         plrWins++;
         cmpWins++;
@@ -30,12 +44,10 @@ function chooseRoundWinner(player, computer){
     }
 }
 
-function decideTheGame(){
-    chooseRoundWinner(getPlayerChoice(), getCPUChoice());
-    console.log(`Player wins are ${plrWins} Computer wins are ${cmpWins}` );    
-    }
 
-let i = 0;
+
+
+/* let i = 0;
 while (i < 5){
 decideTheGame();
 i++;
@@ -45,4 +57,4 @@ i++;
     }
     else{
         console.log("The CPU Won!");
-}
+} */
