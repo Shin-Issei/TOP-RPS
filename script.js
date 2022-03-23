@@ -1,9 +1,7 @@
 let plrWins = 0;
 let cmpWins = 0;
 
-function out(x){
-    return console.log(x);
-}
+
 
 function getPlayerChoice(){
     let Choice = "RPS"
@@ -14,8 +12,6 @@ function getPlayerChoice(){
 function getCPUChoice(){
     let ComputerChoice = "RPS"
     return ComputerChoice[Math.floor(Math.random()* 3)]; 
-    // return ComputerChoice[0];
-    
 }
 
 function chooseRoundWinner(player, computer){
@@ -32,15 +28,11 @@ function chooseRoundWinner(player, computer){
     else{
         plrWins++;
     }
-    
-
 }
 
 function decideTheGame(){
-    
     chooseRoundWinner(getPlayerChoice(), getCPUChoice());
-    console.log(`Player wins are ${plrWins} Computer wins are ${cmpWins}` );
-    
+    console.log(`Player wins are ${plrWins} Computer wins are ${cmpWins}` );    
     }
 
 let i = 0;
