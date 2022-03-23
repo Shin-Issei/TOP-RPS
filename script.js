@@ -3,7 +3,6 @@ const plrChoicePaper = document.getElementById("paper");
 const plrChoiceScissors = document.getElementById("scissors");
 const div = document.getElementById("playerChoiceReturn");
 
-let ButtonSelect = 5;
 let plrWins = 0;
 let cmpWins = 0;
 
@@ -24,25 +23,36 @@ function getCPUChoice(){
     return ComputerChoice[Math.floor(Math.random()* 3)] 
 }
 
-//Change the source of player parameter when I choose round winner.
+
 function chooseRoundWinner(player, computer){
     console.log(player);
     console.log(computer);
     
     if (player === computer){
+        div.textContent = "Tied Round"
         plrWins++;
         cmpWins++;
-        return;
     }
     //all computer win situations
     if ((computer == "P" && player == "R") || (computer == "S" && player == "P") || (computer == "R" && player == "S")){
         cmpWins++;
-        return;
     }
     else{
         plrWins++;
     }
-}
+
+    if (plrWins === 3){
+        div.textContent = "You Win";
+        plrWins = 0;
+        cmpWins = 0;
+    }
+
+    if (cmpWins === 3){
+        div.textContent = "You Lose";
+        plrWins = 0;
+        cmpWins = 0;
+        }
+    }
 
 
 
