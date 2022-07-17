@@ -6,21 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <!-- We will be adding a UI to our rock paper scissors game! -->
-    <div id="button-box">
-      <!-- Create elements that capure the results of each round.  -->
-      <button id="rock">Select Rock</button>
-      <button id="paper">Select Paper</button>
-      <button id="scissors">Select Scissors</button>
-      <div id="playerChoiceReturn">Place holder text</div>
-      <div id="playerScore"></div>
-      <div id="CPUScore"></div>
-    </div>
-
+    <div class="game-space">
+      <div class="score-board">
+        <div id="playerScore"></div>
+        <div id="CPUScore"></div>
+        <div id="playerChoiceReturn"></div>
+      </div>
+      <div id="button-box">
+        <!-- Create elements that capure the results of each round.  -->
+        <button id="rock">Select Rock</button>
+        <button id="paper">Select Paper</button>
+        <button id="scissors">Select Scissors</button>
+        <button id="reset" onclick="resetGame()">Reset Game</button>
+      </div>
     <div id="reset">
-      <button id="reset" onclick="resetGame()">Reset Game</button>
     </div>
+  </div>
   </body>
 </html>
